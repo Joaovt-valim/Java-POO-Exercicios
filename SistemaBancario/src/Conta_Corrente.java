@@ -11,13 +11,14 @@ public class Conta_Corrente extends Conta {
         Scanner scanner = new Scanner(System.in);
         double taxa = 2;
         System.out.println("Quanto o usuario deseja sacar?: ");
-        double ValorSaque= scanner.nextByte();
-        if(getSaldo()- taxa<0 ){
+        double ValorSaque= scanner.nextDouble();
+
+        if(getSaldo() <(ValorSaque+ taxa)){
             System.out.println("Saldo insuficiente");
             return;
         }
-        setSaldo(getSaldo()-ValorSaque);
-        System.out.println(getSaldo() );
+        setSaldo(getSaldo()-ValorSaque- taxa);
+        System.out.println("Saque realizado! Novo saldo: " + getSaldo() );
 
     }
 

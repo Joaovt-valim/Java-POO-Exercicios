@@ -30,7 +30,6 @@ public abstract class Conta {
        double ValorDepositar = scanner.nextDouble();
         setSaldo(saldo+ ValorDepositar);
         System.out.println("Deposito feito com sucesso!!! ");
-        scanner.close();
     };
     public abstract void sacar();
     public abstract void calcularRendimento();

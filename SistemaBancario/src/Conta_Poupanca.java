@@ -2,12 +2,17 @@ import java.util.Scanner;
 
 public class Conta_Poupanca extends Conta{
     @Override
+    public void depositar() {
+        super.depositar();
+    }
+
+    @Override
     public void sacar() {
             Scanner scanner = new Scanner(System.in);
-            double taxa = 2;
-            System.out.println("Quanto o usuario deseja sacar?: ");
+
+            System.out.println(getSaldo()+ "]\nQuanto o usuario deseja sacar?");
             double ValorSaque= scanner.nextDouble();
-            if(getSaldo()- taxa<0 ){
+            if(getSaldo()<ValorSaque ){
                 System.out.println("Saldo insuficiente");
                 return;
             }
@@ -19,6 +24,6 @@ public class Conta_Poupanca extends Conta{
     public void calcularRendimento() {
 
       setSaldo(getSaldo()*1.005);
-        System.out.println("O rendimento da Poupanca foi de "+ getSaldo()%1.005);
+        System.out.printf("O rendimento da Poupanca foi de %.2f%n", getSaldo()%1.005);
     }
 }
