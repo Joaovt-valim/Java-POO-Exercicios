@@ -3,7 +3,7 @@ import java.util.Scanner;
 public abstract class Conta {
     private double numero;
 
-    private double saldo;
+    private double saldo = 0;
 
     public void setNumero(int numero) {
         this.numero = numero;
